@@ -1,0 +1,126 @@
+version: 2
+
+models:
+  - name: stg_area_colhida
+    description: >
+      Tabela staging de área colhida por produto agrícola no estado de SP.
+      Converte os campos originais de texto para numérico, substituindo valores inválidos ou nulos por 0.
+      Segundo o site "https://sidra.ibge.gov.br/pesquisa/pam/tabelas", nas observações sobre a série histórica a de número 10 diz que a diferença entre a área plantada ou destinada à colheita e a área colhida na lavoura é considerada como área perdida.
+    columns:
+      - name: ano
+        description: Ano da coleta dos dados.
+        tests:
+          - not_null
+      - name: total
+        description: Área total colhida (hectares).
+      - name: abacate
+        description: Área colhida de abacate (hectares).
+      - name: abacaxi
+        description: Área colhida de abacaxi (hectares).
+      - name: acai
+        description: Área colhida de açaí (hectares).
+      - name: alfafa_fenada
+        description: Área colhida de alfafa fenada (hectares).
+      - name: algodao_arboreo_em_caroco
+        description: Área colhida de algodão arbóreo em caroço (hectares).
+      - name: algodao_herbaceo_em_caroco
+        description: Área colhida de algodão herbáceo em caroço (hectares).
+      - name: alho
+        description: Área colhida de alho (hectares).
+      - name: amendoim_em_casca
+        description: Área colhida de amendoim em casca (hectares).
+      - name: arroz_em_casca
+        description: Área colhida de arroz em casca (hectares).
+      - name: aveia_em_grao
+        description: Área colhida de aveia em grão (hectares).
+      - name: azeitona
+        description: Área colhida de azeitona (hectares).
+      - name: banana_cacho
+        description: Área colhida de banana em cacho (hectares).
+      - name: batata_doce
+        description: Área colhida de batata-doce (hectares).
+      - name: batata_inglesa
+        description: Área colhida de batata-inglesa (hectares).
+      - name: cacau_em_amendoa
+        description: Área colhida de cacau em amêndoa (hectares).
+      - name: caju
+        description: Área colhida de caju (hectares).
+      - name: cafe_arabica_em_grao
+        description: Área colhida de café arábica em grão (hectares).
+      - name: cafe_canephora_em_grao
+        description: Área colhida de café canephora em grão (hectares).
+      - name: caqui
+        description: Área colhida de caqui (hectares).
+      - name: cebola
+        description: Área colhida de cebola (hectares).
+      - name: cevada_em_grao
+        description: Área colhida de cevada em grão (hectares).
+      - name: citros
+        description: Área colhida de citros (hectares).
+      - name: coco_da_bahia
+        description: Área colhida de coco-da-bahia (hectares).
+      - name: dende
+        description: Área colhida de dendê (hectares).
+      - name: erva_mate_folha_verde
+        description: Área colhida de erva-mate em folha verde (hectares).
+      - name: feijao_em_grao
+        description: Área colhida de feijão em grão (hectares).
+      - name: figo
+        description: Área colhida de figo (hectares).
+      - name: fumo_em_folha
+        description: Área colhida de fumo em folha (hectares).
+      - name: goiaba
+        description: Área colhida de goiaba (hectares).
+      - name: guarana_em_grao
+        description: Área colhida de guaraná em grão (hectares).
+      - name: juta
+        description: Área colhida de juta (hectares).
+      - name: laranja
+        description: Área colhida de laranja (hectares).
+      - name: limao
+        description: Área colhida de limão (hectares).
+      - name: maca
+        description: Área colhida de maçã (hectares).
+      - name: mamona
+        description: Área colhida de mamona (hectares).
+      - name: mamao
+        description: Área colhida de mamão (hectares).
+      - name: manga
+        description: Área colhida de manga (hectares).
+      - name: maracuja
+        description: Área colhida de maracujá (hectares).
+      - name: mandioca
+        description: Área colhida de mandioca (hectares).
+      - name: manga
+        description: Área colhida de manga (hectares).
+      - name: milho_em_grao
+        description: Área colhida de milho em grão (hectares).
+      - name: nectarina
+        description: Área colhida de nectarina (hectares).
+      - name: noz
+        description: Área colhida de noz (hectares).
+      - name: oliva
+        description: Área colhida de oliva (hectares).
+      - name: pera
+        description: Área colhida de pera (hectares).
+      - name: pessego
+        description: Área colhida de pêssego (hectares).
+      - name: pinha
+        description: Área colhida de pinha (hectares).
+      - name: sisal_agave
+        description: Área colhida de sisal/agave (hectares).
+      - name: sorgo_em_grao
+        description: Área colhida de sorgo em grão (hectares).
+      - name: tomate
+        description: Área colhida de tomate (hectares).
+      - name: trigo_em_grao
+        description: Área colhida de trigo em grão (hectares).
+      - name: uva
+        description: Área colhida de uva (hectares).
+
+sources:
+  - name: area_colhida_sp
+    description: Fonte bruta de área colhida por produto agrícola (IBGE/Sidra/PAM).
+    tables:
+      - name: area_colhida_sp
+        description: Arquivo original contendo áreas colhidas por cultura agrícola.
