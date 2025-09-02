@@ -1,0 +1,135 @@
+version: 2
+
+models:
+  - name: stg_producao
+    description: >
+      Tabela staging da produção por produto agrícola no estado de SP.
+      Converte os campos originais de texto para numérico, substituindo valores inválidos ou nulos por 0.
+      Segundo o site "https://sidra.ibge.gov.br/pesquisa/pam/tabelas", nas observações sobre a série histórica:
+      2 - A partir do ano de 2001, as quantidades produzidas dos produtos: abacate, banana, caqui, figo, goiaba, laranja, limão, maçã, mamão, manga, maracujá, 
+      marmelo, melancia, melão, pêra, pêssego e tangerina passam a ser expressas em toneladas. Nos anos anteriores, eram expressas em mil frutos, 
+      com exceção da banana, que era expressa em mil cachos. O rendimento médio passa a ser expresso em Kg/ha. Nos anos anteriores, era expresso em frutos/ha, 
+      com exceção da banana, que era expressa em cachos/ha.
+      3 - As unidades de medida das plantas frutíferas foram alteradas em 2001. 
+      A tabela de conversão de frutos em quilogramas encontra-se no documento: "https://sidra.ibge.gov.br/content/documentos/pam/AlteracoesUnidadesMedidaFrutas.pdf".
+      4 - Até 2001, café (em coco); a partir de 2002, café (beneficiado ou em grão).
+      6 - As quantidades produzidas de abacaxi e de coco-da-baía são expressas em mil frutos, e o rendimento médio em frutos/ha.
+      
+    columns:
+      - name: ano
+        description: Ano da coleta dos dados.
+        tests:
+          - not_null
+      - name: total
+        description: Produção total no Estado de São Paulo, 
+      - name: abacate
+        description: produção de abacate (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: abacaxi
+        description: produção de abacaxi (toneladas).
+      - name: acai
+        description: produção de açaí (toneladas).
+      - name: alfafa_fenada
+        description: produção de alfafa fenada (toneladas).
+      - name: algodao_arboreo_em_caroco
+        description: produção de algodão arbóreo em caroço (toneladas).
+      - name: algodao_herbaceo_em_caroco
+        description: produção de algodão herbáceo em caroço (toneladas).
+      - name: alho
+        description: produção de alho (toneladas).
+      - name: amendoim_em_casca
+        description: produção de amendoim em casca (toneladas).
+      - name: arroz_em_casca
+        description: produção de arroz em casca (toneladas).
+      - name: aveia_em_grao
+        description: produção de aveia em grão (toneladas).
+      - name: azeitona
+        description: produção de azeitona (toneladas).
+      - name: banana_cacho
+        description: produção de banana (mil cachos até o ano 2000 e toneladas a partir de 2001).
+      - name: batata_doce
+        description: produção de batata-doce (toneladas).
+      - name: batata_inglesa
+        description: produção de batata-inglesa (toneladas).
+      - name: cacau_em_amendoa
+        description: produção de cacau em amêndoa (toneladas).
+      - name: caju
+        description: produção de caju (toneladas).
+      - name: cafe_arabica_em_grao
+        description: produção de café arábica em grão (toneladas).
+      - name: cafe_canephora_em_grao
+        description: produção de café canephora em grão (toneladas).
+      - name: caqui
+        description: produção de caqui (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: cebola
+        description: produção de cebola (toneladas).
+      - name: cevada_em_grao
+        description: produção de cevada em grão (toneladas).
+      - name: citros
+        description: produção de citros (toneladas).
+      - name: coco_da_bahia
+        description: produção de coco-da-bahia (toneladas).
+      - name: dende
+        description: produção de dendê (toneladas).
+      - name: erva_mate_folha_verde
+        description: produção de erva-mate em folha verde (toneladas).
+      - name: feijao_em_grao
+        description: produção de feijão em grão (toneladas).
+      - name: figo
+        description: produção de figo (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: fumo_em_folha
+        description: produção de fumo em folha (toneladas).
+      - name: goiaba
+        description: produção de goiaba (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: guarana_em_grao
+        description: produção de guaraná em grão (toneladas).
+      - name: juta
+        description: produção de juta (toneladas).
+      - name: laranja
+        description: produção de laranja (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: limao
+        description: produção de limão (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: maca
+        description: produção de maçã (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: mamona
+        description: produção de mamona (toneladas).
+      - name: mamao
+        description: produção de mamão (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: manga
+        description: produção de manga (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: maracuja
+        description: produção de maracujá (mil frutos até o ano 2000 e toneladas a partir de 2001). 
+      - name: mandioca
+        description: produção de mandioca (toneladas).
+      - name: manga
+        description: produção de manga (toneladas).
+      - name: milho_em_grao
+        description: produção de milho em grão (toneladas).
+      - name: nectarina
+        description: produção de nectarina (toneladas).
+      - name: noz
+        description: produção de noz (toneladas).
+      - name: oliva
+        description: produção de oliva (toneladas).
+      - name: pera
+        description: produção de pera (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: pessego
+        description: produção de pêssego (mil frutos até o ano 2000 e toneladas a partir de 2001).
+      - name: pinha
+        description: produção de pinha (toneladas).
+      - name: sisal_agave
+        description: produção de sisal/agave (toneladas).
+      - name: sorgo_em_grao
+        description: produção de sorgo em grão (toneladas).
+      - name: tomate
+        description: produção de tomate (toneladas).
+      - name: trigo_em_grao
+        description: produção de trigo em grão (toneladas).
+      - name: uva
+        description: produção de uva (toneladas).
+
+sources:
+  - name: producao_sp
+    description: Fonte bruta de produção por produto agrícola (IBGE/Sidra/PAM).
+    tables:
+      - name: producao_sp
+        description: Arquivo original contendo áreas plantada ou destinada a colheita por cultura agrícola.
